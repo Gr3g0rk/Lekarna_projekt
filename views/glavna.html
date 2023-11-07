@@ -1,0 +1,55 @@
+% rebase("osnovna.html")
+<div class="odzadje">
+  <div class="container is-max-widescreen">
+    <div class="notification is-info"> 
+      <div class="is-size-5">
+        <b>Pozdravljeni na spletni strani Lekarne Mlek.</b>
+        <ul>
+          <li> - Če ste pacient, in vas zanima stanje zdravil, ki jih imate na recept, vpišite svojo ZZZS številko v spodnje prvo polje.</li>
+          <li> - Če vas zanimajo podrobnejše informacije o določenem zdravilu, v spodnje drugo polje vpišite njegovo ime ali nacionalno šifro.</li>
+          <li> - Če ste zdravnik, v zadnjem polju vnesite svoj ID, kjer boste lahko dostopali do podatkov svojih pacientov.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class = "vnos"> 
+    <div class = "has-text-centered">  
+      <!--Polje za vnasanje ZZZS pacientov, s klikom na gumb 'POTRDI!' nas preusmeri na stran 'zzzs.html',
+          kjer lahko vidimo podatke o pacientu (recept, ime, priimek,...)'-->
+      <form action="/isci/">
+        <label>
+          <b class="is-size-4">
+            Vnesi ZZZS pacienta:
+          </b>
+        </label>
+        <br>
+        <input type="text" name="iskalni_niz">
+        <input type="submit" value="POTRDI!">
+      </form>
+      <!--Polje za vnasanje imena zdravila, s kilkom na gumb 'POTRDI!' nas preusmeri na stran zdravilo.html, kjer
+        vidimo podatke za izbrano zdravilo.'-->
+      <form action="/zdravilo/">
+        <label>
+          <b class = "is-size-4">
+            Vnesi ime ali šifro zdravila:
+          </b>
+        </label>
+        <br>
+        <input type="text" name="zdr", >
+        <input type="submit" value="POTRDI!">
+      </form>
+      <!--Polje za vnasanje id zdravnika, s klikom na gumb 'POTRDI!' nas preusmeri na stran 'zdravnik.html', kjer vidimo
+      podatke o pacientih, ki jih ta zdravnik zdravi..-->
+      <form action="/zdravnik/">
+        <label>
+          <b class = "is-size-4">
+            Vnesi id zdravnika:
+          </b>
+        </label>
+        <br>
+        <input type="text" name="zdravnikId">
+        <input type="submit" value="POTRDI!">
+      </form>
+    </div>
+  </div>
+</div>

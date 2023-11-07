@@ -1,0 +1,74 @@
+% rebase("osnovna.html")
+<div class = "has-text-centered">
+% if len(ime_priimek) == 0:
+<h1 class = "is-size-2">Zdravnik s tem ID-jem ne obstaja</h1>
+% else:
+<h1 class = "is-size-2">Pacienti za zdravnika - {{ime_priimek[0][0]}} {{ime_priimek[0][1]}} (ID: {{iskalni_niz}})</h1>
+% end 
+<ul>
+   <div class="is-size-4">
+    % if len(osebe) == 0:
+    <p>Zdravnik nima nobenega pacienta</p> 
+    % else:
+        <div class="scroll3">
+            <p><b>zzzs  |   ime  |   priimek   |   datum rojstva</b></p>
+            % for podatek in osebe:
+            <li>
+                {{podatek[0]}} | {{podatek[1]}} | {{podatek[2]}} | {{podatek[3]}}
+            </li>
+            % end
+        </div>
+    </div>
+</div>
+</ul>
+
+<div class="has-text-centered">
+<div class = "is-size-4">
+    <div class="container is-max-widescreen">
+        <div>
+            <h1 class="is-size-3">Vnesite podatke o receptu za pacienta</h1> 
+            <div class="container is-widescreen">
+                <div class="notification is-info">
+                <!--Obrazec za pisanje receptov pacientu-->
+                <form action="/obrazec/">
+                    <label for="obnovljiva">Ali je recept obnovljiv:</label> 
+                    <select id="obnovljiva" name="obnovljiva">
+                        <option value="1">Da</option>
+                        <option value="0">Ne</option>
+                    </select><br>
+                    <!--sss-->
+                    Pogostost dviga zdravila: <input type="text" size="40" maxlength="50" name="pogosto"><br>
+                    <!--sss-->
+                    <label for="zzzs">ZZZS pacienta:</label> 
+                    <select id="zzzs" name="zzzs">
+                    <!--Izbira kateremu od svojih pacientov napisati recept-->
+                    % for podatek in osebe: 
+                        <option value = {{podatek[0]}}>{{podatek[0]}}</option>
+                    % end
+                    </select>
+                    <br>
+                    <!--sss-->
+                    <label for="id">ID zdravnika: </label> 
+                    <select id="id" name="id"> <!-- ID zdravnika, ki se je vpisal na stran (s tem preprecimo, da bi drug zdravnik pacientu napisal recepta)-->
+                        <option value = {{iskalni_niz}}>
+                            {{iskalni_niz}}
+                        </option>
+                    </select>
+                    <br>
+                    Zdravilo (nacionalna šifra): 
+                    <input type="text" size="40" maxlength="50" name="zdravilo"><br>
+                    <input type="submit" value="POTRDI!">
+                </form>
+            </div>
+        </div>
+        </div>  
+      </div>
+</div></div> <br>
+<div class="container is-max-widescreen">
+    <div class="notification is-info">
+    <h1 class="is-size-4">Če želite dodati pacienta v bazo, kliknite na gumb "DODAJ PACIENTA!"</h1>
+    <!--Preusmeri nas na novo stran, kjer lahko zdravnik doda novega pacienta-->
+    <form action="/dodaj_pacienta/"> 
+        <input type="submit" value="DODAJ PACIENTA!"> 
+    </form>
+</div></div>

@@ -1,0 +1,20 @@
+% rebase("osnovna.html")
+<form action="/obrazec/"> <!--Obrazec za recept pacienta-->
+    <label for="obnovljiva">obnovljiva:</label> 
+    <select id="obnovljiva" name="obnovljiva">
+        <option value="true">True</option>
+        <option value="false">False</option>
+    </select><br>
+    <!--sss-->
+    zdravilo (nacionalna sifra): <input type="text" size="40" maxlength="50" name="zdravilo"><br>
+    <!--sss-->
+    <label for="zzzs">zzzs pacienta:</label> 
+    <select id="zzzs" name="zzzs">
+    % for podatek in osebe:
+        <option value="{{podatek[0]}">{{podatek[0]}}}</option>
+    % end
+    </select><br>
+    <!--sss-->
+    id zdravnika: <input type="text" size="40" maxlength="100" name="id"><br>
+    <input type="submit" value="POTRDI!">
+</form>

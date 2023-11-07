@@ -1,0 +1,20 @@
+% rebase("osnovna.html")
+<div class = "has-text-centered">
+<h1 class = "is-size-1">Podatki za zdravilo - {{iskalni_niz}}</h1>
+
+<ul>
+   <div class="is-size-4">
+    % if len(zdravilo) == 0:
+    <p>Tega zdravila zal ni v bazi</p> 
+    % else:
+        <div class="notification is-info">
+            <p><b>nacionalna sifra  |   ime zdravila   |   cena   |   imetnik</b></p>
+            % for podatek in zdravilo:
+            <li>
+                {{podatek[0]}} | {{podatek[1]}} | {{podatek[2]}} | {{podatek[3]}}
+            </li>
+            % end
+        </div>
+    </div>
+</div>
+</ul>

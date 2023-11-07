@@ -1,0 +1,119 @@
+/* osnovna */
+body{
+    margin: auto 10px;
+    width: auto;
+    height: 860px;
+    background-color: #F2E9DC;
+    /*background-color: rgba(0, 0, 0, 0.082);*/
+    }
+/* zzzs */
+div.scroll {
+    margin:4px, 4px;
+    padding:4px;
+    /*background-color: #91c499;
+    background-color: hsl(252, 100%, 41%);*/
+    width: 1150px;
+    height: 150px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    text-align:justify;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    border-radius: 5px;
+    color: #595959;
+   } 
+/* zdravilo */
+div.scroll2 {
+    margin:4px, 4px;
+    padding:4px;
+    background-color: #91c499;
+    width: 1100px;
+    height: 450px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    text-align:justify;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    border-radius: 15px;
+    color: white;
+   } 
+/* zdravnik */
+div.scroll3 {
+    margin:4px, 4px;
+    padding:4px;
+    background-color: #3e8ed0;;
+    width: 1150px;
+    height: 185px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    text-align:justify;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+   } 
+
+#obnovljiva{
+width:100px;   
+}
+#zzzs{
+width:100px;   
+}
+#id {
+width: 100px;
+}
+input[type=submit] {
+width: 20%;
+background-color: #ffcc00;
+color: white;
+padding: 10px 9px;
+margin: 8px 0;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+}
+input[type=text], select {
+width: 25%;
+padding: 8px 14px;
+margin: 8px 0;
+display: inline-block;
+border: 1px solid #ccc;
+border-radius: 4px;
+box-sizing: border-box;
+}
+/* glavna */
+input[type=text], select {
+    width: 45%;
+    padding: 8px 14px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  input[type=submit] {
+    font-weight: bold;
+    width: 20%;
+    background-color: #91c499 !important;
+    color: white;
+    padding: 10px 9px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .vnos {
+    border-radius: 5px;
+    width: 35%;
+    align-items: center;
+    padding: 5px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50% , 25%)
+  } 

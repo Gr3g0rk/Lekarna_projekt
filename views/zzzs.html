@@ -1,0 +1,45 @@
+% rebase("osnovna.html")
+<div class = "has-text-centered">
+<h2 class = "is-size-2">Podatki za osebo z ZZZS številko - {{iskalni_niz}}</h2>
+
+<ul>    
+    <div class="container is-max-widescreen">
+        <div class="notification is-info">
+            % if len(oseba) == 0:
+                <p class="is-size-4"><b>Pacient s tem ID-jem ne obstaja.</b></p>
+            % end
+            % for podatek in oseba:
+            <li class = "is-size-4">
+                <b>Ime:</b> {{podatek[1]}} <br> <b>Priimek:</b> {{podatek[2]}} <br> <b>Datum rojstva:</b> {{podatek[3]}} <br> <b>ID osebnega zdravnika:</b> {{podatek[4]}}
+            </li>
+            % end
+        </div>
+    </div>
+
+    <p class = "is-size-2">Zdravila za dvig:</p>
+    <p class = "is-size-3">Obnovljiva zdravila na receptu:</p>
+        <div class="scroll">
+                % if len(zdravila_obno) == 0:
+                <p class="is-size-4"><b>Ni zdravil za dvig</b></p>
+                % end
+                % for zdravilo in zdravila_obno:
+                <li class = "is-size-4">
+                    <b>{{zdravilo[0]}}, {{zdravilo[2]}}</b>
+                </li>
+                % end
+        </div>
+    <p class = "is-size-3">Neobnovljiva zdravila na receptu (enkratni dvig):</p>
+    <div class="scroll">
+
+            % if len(zdravila_ne) == 0:
+            <p class="is-size-4"><b>Ni zdravil za dvig</b></p>
+            % end
+            % for zdravilo in zdravila_ne:
+            <li class = "is-size-4">
+                <b>{{zdravilo[0]}}</b>
+            </li>
+            % end
+
+    </div>
+</ul>
+</div>
